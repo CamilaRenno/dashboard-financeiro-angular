@@ -13,7 +13,7 @@ export class LoginComponent {
 
   login() {
     if (this.username && this.password) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/menu']);
     } else {
       alert('Preencha usuário e senha!');
     }
