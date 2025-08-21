@@ -1,0 +1,24 @@
+<div style="padding:20px;">
+  <h2>Dashboard Financeiro</h2>
+  <button pButton label="Exportar para Excel" (click)="exportExcel()" style="margin-bottom:10px"></button>
+  <p-table [value]="movimentacoes">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Data</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Categoria</tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-mov>
+      <tr>
+        <td>{{mov.data}}</td>
+        <td>{{mov.descricao}}</td>
+        <td>{{mov.valor | currency:'BRL'}}</td>
+        <td>{{mov.categoria}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <h3>Gastos por Categoria</h3>
+  <p-chart type="pie" [data]="chartData"></p-chart>
+</div>
